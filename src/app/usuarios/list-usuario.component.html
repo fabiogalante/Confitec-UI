@@ -1,0 +1,35 @@
+<div class="col-md-12">
+  <h2> LISTA DE USUÁRIOS</h2>
+  <div class="table-responsive table-container">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Nascimento</th>
+        <th>Escolaridade</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td class="hidden">{{usuario.id}}</td>
+        <td>{{usuario.nome}} {{usuario.sobrenome}}</td>
+        <td>{{usuario.email}}</td>
+        <td>{{usuario.dataNascimento}}</td>
+        <td>{{usuario.escolaridade}}</td>
+        <td>
+          <button (click)="excluirUsuario(usuario)" class="btn btn-info"> Excluir</button>
+          <button (click)="alterarUsuario(usuario)" style="margin-left: 20px;" class="btn btn-info"> Alterar</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-info" (click)="novo()">INCLUIR NOVO</button>
+  </div>
+
+
+</div>
